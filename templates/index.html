@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block content %}
+  <section id="about">
+  {% if config.description %}
+    {{ config.description  }}
+  {% endif %}
+  {% if config.social %}
+      <p>Find me on
+      {% set length = config.social | length %}
+      {% for elem in config.social %}
+      {% if elem.name == "email" %}
+        <a class="icon" target="_blank" rel="noopener" href="mailto:{{ elem.link }}" aria-label="Email">
+          <i class="fas fa-envelope" aria-hidden="true"></i>
+        </a>
+      {% elif elem.name == "rss" %}
+        <a class="icon" target="_blank" rel="noopener" href="{{ elem.link }}" aria-label="RSS">
+          <i class="fas fa-rss" aria-hidden="true"></i>
+        </a>
+      {% elif elem.name == "scholar" %}
+        <a class="icon" target="_blank" rel="noopener" href="{{ elem.link }}" aria-label="Google Scholar">
+          <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+        </a>
+      {% else %}
+        <a class="icon" target="_blank" rel="noopener" href="{{ elem.link }}" aria-label="{{ elem.name }}">
+          <i class="fab fa-{{ elem.name | lower }}" aria-hidden="true"></i>
+        </a>
+      {% endif %}
+        {% if (loop.index + 2) < length %}
+          {{- " , " -}}
+        {% elif (loop.index + 1) < length %}
+          {{- " and " -}}
+        {% else %}
+          {{- "." -}}
+        {% endif %}
+      {% endfor %}
+      </p>
+  {% endif %}
+  {% include "optional-about.html" ignore missing %}
+  </section>
+
+  <!-- tags -->
+  {% set showProjectsList = false %}
+  {% if config.showprojectslist %}
+    {% set showProjectsList = config.showProjectsList %}
+  {% elif config.projects %}
+    {% set showProjectsList = true %}
+  {% endif %}
+  {% if showProjectsList %}
+    {% set projectsUrl = "#" %}
+    {% if config.projectsurl %}
+      {% set projectsUrl = config.projectsUrl %}
+    {% endif %}
+  <section id="projects">
+    <span class="h1"><a href="{{ projectsUrl }}">Projects</a></span>
+    <ul class="project-list">
+        {% for project in config.projects %}
+        <li class="project-item">
+          <a href="{{ project.url }}">{{ project.name }}</a>: {{ project.desc | markdown }}
+        </li>
+        {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+{% endblock content %}

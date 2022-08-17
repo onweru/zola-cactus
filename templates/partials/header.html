@@ -1,0 +1,28 @@
+<header id="header">
+  <a href="{{ config.base_url }}">
+  {% if config.gravatar %}
+    <!-- md5 hash the gravatar url -->
+    <div id="logo" style='background-image: url("https://www.gravatar.com/avatar/{{  config.gravatar }}?s=100&d=identicon")'></div>
+  {% elif config.logo %}
+    {% set logo = get_url(path=config.logo) %}
+  <div id="logo" style='background-image: url({{ logo }});'></div>
+  {% else %}
+    {% set logo = get_url(path="images/logo.png") %}
+    <div id="logo" style='background-image: url({{ logo }})'></div>
+  {% endif %}
+  <div id="title">
+    <h1>{{ config.title }}</h1>
+  </div>
+  </a>
+  <div id="nav">
+    <ul>
+      <li class="icon">
+        <a href="#" aria-label="Menu"><i class="fas fa-bars fa-2x" aria-hidden="true"></i></a>
+      </li>
+      {% for item in config.main %}
+        <li><a href="{{ item.url }}">{{ item.name }}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
+</header>
+
