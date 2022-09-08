@@ -1,12 +1,11 @@
----
-title: Programming Language - Subtyping
-date: 2020-04-29 09:00:00
-tags:
-    - programming language
-category: tech
-keywords:
-    - subtyping
----
++++
+title = "Programming Language - Subtyping"
+date = 2020-04-29T09:00:00.000Z
+keywords = [ "subtyping" ]
+[taxonomies]
+tags = [ "programming language" ]
+categories = [ "tech" ]
++++
 
 ## Some Good Subtyping Rules
 

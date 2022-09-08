@@ -1,14 +1,11 @@
----
-title: Code Block Test
-date: 2021-06-27 09:00:00
-tags:
-    - test
-categories:
-    - tech
-keywords:
-    - markdown
-    - code block
----
++++
+title = "Code Block Test"
+date = 2021-06-27T09:00:00.000Z
+keywords = [ "markdown", "code block" ]
+[taxonomies]
+tags = [ "test" ]
+categories = [ "tech" ]
++++
 
 
 `String`

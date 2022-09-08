@@ -1,16 +1,11 @@
----
-title: VueのNavigation Guards
-date: 2019-01-25 09:00:00
-tags:
-    - JavaScript
-    - Vue.js
-category: tech
-keywords:
-    - Vue.js
-    - Javascript
-    - ES2015
-    - ES6
----
++++
+title = "VueのNavigation Guards"
+date = 2019-01-25T09:00:00.000Z
+keywords = [ "Vue.js", "Javascript", "ES2015", "ES6" ]
+[taxonomies]
+tags = [ "JavaScript", "Vue.js" ]
+categories = [ "tech" ]
++++
 
 Navigation guards are provided by `vue-router`.
 Three ways to hook:

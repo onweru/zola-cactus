@@ -1,0 +1,22 @@
+{% set showProjectsList = false %}
+{% if config.extra.showprojectslist %}
+  {% set showProjectsList = config.showProjectsList %}
+{% elif config.extra.projects %}
+  {% set showProjectsList = true %}
+{% endif %}
+{% if showProjectsList %}
+  {% set projectsUrl = "#" %}
+  {% if config.extra.projectsurl %}
+    {% set projectsUrl = config.projectsUrl %}
+  {% endif %}
+<section id="projects">
+  <span class="h1"><a href="{{ projectsUrl }}">Projects</a></span>
+  <ul class="project-list">
+    {% for project in config.extra.projects %}
+    <li class="project-item">
+      <a href="{{ project.url }}">{{ project.name }}</a>: {{ project.desc | safe }}
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+{% endif %}

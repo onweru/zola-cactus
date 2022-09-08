@@ -1,14 +1,11 @@
----
-title: Bind specific arguments of a function
-date: 2019-03-08 09:00:00
-tags:
-    - JavaScript
-category: tech
-keywords:
-    - Javascript
-    - ES2015
-    - ES6
----
++++
+title = "Bind specific arguments of a function"
+date = 2019-03-08T09:00:00.000Z
+keywords = [ "Javascript", "ES2015", "ES6" ]
+[taxonomies]
+tags = [ "JavaScript" ]
+categories = [ "tech" ]
++++
 
 To bind specific (nth) arguments of a function, we can write a decorator instead of using `Function.bind()`:
 

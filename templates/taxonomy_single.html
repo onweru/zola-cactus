@@ -7,20 +7,17 @@
 </head>
 <body class="max-width mx-auto px3 ltr">
   <div class="content index py4">
-
     {% include "partials/header.html" %}
-
     <section id="about">
+      {% if config.description %}
+        {{ config.description  }}
+      {% endif %}
       {% include "partials/social.html" %}
       {% include "optional-about.html" ignore missing %}
     </section>
-
-    {% include "partials/posts.html" %}
     <!-- tags -->
     {% include "partials/projects.html" %}
-
     {% include "partials/footer.html" ignore missing %}
-
   </div>
 </body>
 {% include "partials/scripts.html" %}

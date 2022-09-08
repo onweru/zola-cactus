@@ -1,12 +1,11 @@
----
-title: ruby学习笔记
-date: 2016-12-08 22:54:49
-category: notes
-tags:
-    - ruby
-keywords:
-   - ruby
----
++++
+title = "ruby学习笔记"
+date = 2016-12-08T22:54:49.000Z
+keywords = [ "ruby" ]
+[taxonomies]
+categories = [ "notes" ]
+tags = [ "ruby" ]
++++
 
 ## regular expressions
 

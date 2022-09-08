@@ -1,14 +1,11 @@
----
-title: uipath ノート（三）- uipath orchestrator
-date: 2019-11-23 09:00:00
-tags:
-    - RPA
-categories:
-- notes
-keywords:
-    - RPA
-    - uipath
----
++++
+title = "uipath ノート（三）- uipath orchestrator"
+date = 2019-11-23T09:00:00.000Z
+keywords = [ "RPA", "uipath" ]
+[taxonomies]
+tags = [ "RPA" ]
+categories = [ "notes" ]
++++
 
 ## 利用手順
 

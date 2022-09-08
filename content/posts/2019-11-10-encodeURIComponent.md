@@ -1,14 +1,11 @@
----
-title: JavaScript URI エンコーディング
-date: 2019-11-10 09:00:00
-tags:
-    - JavaScript
-categories:
-- notes
-keywords:
-    - Javascript
-    - encodeURIComponent
----
++++
+title = "JavaScript URI エンコーディング"
+date = 2019-11-10T09:00:00.000Z
+keywords = [ "Javascript", "encodeURIComponent" ]
+[taxonomies]
+tags = [ "JavaScript" ]
+categories = [ "notes" ]
++++
 
 ## まとめ
 

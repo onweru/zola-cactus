@@ -19,10 +19,9 @@
       <li class="icon">
         <a href="#" aria-label="Menu"><i class="fas fa-bars fa-2x" aria-hidden="true"></i></a>
       </li>
-      {% for item in config.main %}
+      {% for item in config.extra.menu.main %}
         <li><a href="{{ item.url }}">{{ item.name }}</a></li>
       {% endfor %}
     </ul>
   </div>
 </header>
-

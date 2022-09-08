@@ -1,15 +1,11 @@
----
-title: php的闭包特性
-date: 2017-01-11 18:39:17
-category: notes
-tags:
-    - php
-keywords:
-    - php
-    - 闭包
-    - lambada
-    - 匿名函数
----
++++
+title = "php的闭包特性"
+date = 2017-01-11T18:39:17.000Z
+keywords = [ "php", "闭包", "lambada", "匿名函数" ]
+[taxonomies]
+categories = [ "notes" ]
+tags = [ "php" ]
++++
 
 闭包和匿名函数在`PHP 5.3.0`引入，并且PHP将两者视为相同的概念。闭包其实是伪装成函数的对象，它的实质其实是`Closure`实例。
 

@@ -1,14 +1,11 @@
----
-title: uipath ノート（二）- Best Practice
-date: 2019-11-18 09:00:00
-tags:
-    - RPA
-categories:
-- notes
-keywords:
-    - RPA
-    - uipath
----
++++
+title = "uipath ノート（二）- Best Practice"
+date = 2019-11-18T09:00:00.000Z
+keywords = [ "RPA", "uipath" ]
+[taxonomies]
+tags = [ "RPA" ]
+categories = [ "notes" ]
++++
 
 ## 時間をかけて各ワークフローに適したレイアウトを選択しましょう。
 

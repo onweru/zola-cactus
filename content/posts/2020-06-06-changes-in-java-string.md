@@ -1,15 +1,11 @@
----
-title: Changes to String in java (from 1.7.0_06)
-date: 2020-06-06 09:00:00
-tags:
-- Algorithms
-categories:
-- notes
-keywords:
-    - Algorithms
-    - String
-    - radix sort
----
++++
+title = "Changes to String in java (from 1.7.0_06)"
+date = 2020-06-06T09:00:00.000Z
+keywords = [ "Algorithms", "String", "radix sort" ]
+[taxonomies]
+tags = [ "Algorithms" ]
+categories = [ "notes" ]
++++
 
 
 Before 1.7.0_06, `String` has 4 non static field:

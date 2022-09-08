@@ -1,14 +1,11 @@
----
-title: JavaScript Comparison operation at a glance
-date: 2019-03-28 09:00:00
-tags:
-    - JavaScript
-category: tech
-keywords:
-    - Javascript
-    - ES2015
-    - ES6
----
++++
+title = "JavaScript Comparison operation at a glance"
+date = 2019-03-28T09:00:00.000Z
+keywords = [ "Javascript", "ES2015", "ES6" ]
+[taxonomies]
+tags = [ "JavaScript" ]
+categories = [ "tech" ]
++++
 
 When given a scenario like:
 

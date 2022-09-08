@@ -1,14 +1,12 @@
----
-title: Algorithms - Graphs
-date: 2020-05-01 09:00:00
-tags:
-    - Algorithms
-category: notes
-keywords:
-    - Algorithms
-    - Graphs
-mathjax: true
----
++++
+title = "Algorithms - Graphs"
+date = 2020-05-01T09:00:00.000Z
+keywords = [ "Algorithms", "Graphs" ]
+mathjax = true
+[taxonomies]
+tags = [ "Algorithms" ]
+categories = [ "notes" ]
++++
 
 ## Undirected Graphs
 

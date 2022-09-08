@@ -1,7 +1,6 @@
-+++
-title = "index"
-template = "index.html"
-transparent = true
-sort_by = "date"
+---
+title: "Home"
+transparent: true
+sort_by: "date"
 # paginate_by = 10
-+++
+---

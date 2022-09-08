@@ -1,70 +1,91 @@
+# {{ (add 0.8 (mul 15 (div (float $elem.Count) terms_count))) }}
 base_url = "https://example.com"
 languageCode = "en-us"
 title = "Cactus theme example"
 # theme = "cactus"
-copyright = "You" # cactus will use title if copyright is not set
 disqusShortname = "example" # Used when comments is enabled. Cactus will use site title if not set
 # googleAnalytics = "UA-1234-5"
 compile_sass = true
 highlight_code = true
 build_search_index = false
 generate_feed = true
-
-
 # summaryLength = 2
+description = "Hugo is a general-purpose website framework. Technically speaking, Hugo is a static site generator. Unlike systems that dynamically build a page with each visitor request, Hugo builds pages when you create or update your content. Since websites are viewed far more often than they are edited, Hugo is designed to provide an optimal viewing experience for your website’s end users and an ideal writing experience for website authors."
+
+paginate_by = 5
+
+taxonomies = [
+  { name = "tags", feed = true, paginate_by = 5 },
+  { name = "categories", feed = true, paginate_by = 5 },
+]
+
+[extra]
+damn = false
+custom_css = ""
+showProjectsList = true # show projects list by default (if projects data file exists).
+projectsUrl = "https://github.com/gohugoio" # title link for projects list
+copyright = "You" # cactus will use title if copyright is not set
+date_format="%Y-%m-%d"
+showAllPostsArchive = false # default
+# Home page settings
+mainSection = "posts" # your main section
+showAllPostsOnHomePage = false # default
+postsOnHomePage = 6 # this option will be ignored if showAllPostsOnHomePage is set to true
+tagsOverview = true # show tags overview by default.
+ShowAllPostsOnHomePage = false
+toc = true
 
 # Main menu which appears below site header.
-[[menu.main]]
+[[extra.menu.main]]
 name = "Home"
 url = "/"
 weight = 1
 
-[[menu.main]]
+[[extra.menu.main]]
 name = "Writings"
 url = "/posts"
 weight = 2
 
-[[menu.main]]
+[[extra.menu.main]]
 name = "Tags"
 url = "/tags"
 weight = 3
 
-[[menu.main]]
+[[extra.menu.main]]
 name = "About"
 url = "/about"
 weight = 4
 
-[markup]
-  [markup.tableOfContents]
-    endLevel = 4
-    ordered = false
-    startLevel = 2
-  [markup.highlight]
-    codeFences = true
-    guessSyntax = false
-    hl_Lines = ""
-    lineNoStart = 1
-    lineNos = true
-    lineNumbersInTable = false
-    noClasses = true
-    style = "dracula"
-    tabWidth = 4
+[[extra.projects]]
+name = "Hugo"
+url = "https://gohugo.io/"
+desc = "The world’s fastest framework for building websites."
+
+[[extra.projects]]
+name = "Hugo Themes"
+url = "https://github.com/gohugoio/hugoThemes"
+desc = "A curated directory of Hugo themes"
+
+[[extra.social]]
+  name = "github"
+  link = "https://github.com/gohugoio"
+[[extra.social]]
+  name = "linkedin"
+  link = "https://www.linkedin.com/company/github/"
+[[extra.social]]
+  name = "email"
+  link = "example@example.com"  # no need for "mailto:" in the head
+
+[markdown]
+# When set to "true", all code blocks are highlighted.
+highlight_code = true
+smart_punctuation = true
+highlight_theme = "dracula"
 
 [params]
 
-  colortheme = "white" # dark, light, white, or classic
   rss = true # generate rss feed. default value is false
   googleAnalyticsAsync = true # use asynchronous tracking. Synchronous tracking by default
-  showAllPostsArchive = false # default
-
-  # Home page settings
-  description = "Hugo is a general-purpose website framework. Technically speaking, Hugo is a static site generator. Unlike systems that dynamically build a page with each visitor request, Hugo builds pages when you create or update your content. Since websites are viewed far more often than they are edited, Hugo is designed to provide an optimal viewing experience for your website’s end users and an ideal writing experience for website authors."
-  mainSection = "posts" # your main section
-  showAllPostsOnHomePage = false # default
-  postsOnHomePage = 5 # this option will be ignored if showAllPostsOnHomePage is set to true
-  tagsOverview = true # show tags overview by default.
-  showProjectsList = true # show projects list by default (if projects data file exists).
-  projectsUrl = "https://github.com/gohugoio" # title link for projects list
 
   # https://gohugo.io/functions/format/#hugo-date-and-time-templating-reference
   dateFormat = "2006-01-02" # default
@@ -87,22 +108,3 @@ weight = 4
 
   # the value of name should be an valid font awesome icon name (brands type)
   # https://fontawesome.com/icons?d=gallery&s=brands
-  [[params.social]]
-    name = "github"
-    link = "https://github.com/gohugoio"
-  [[params.social]]
-    name = "linkedin"
-    link = "https://www.linkedin.com/company/github/"
-  [[params.social]]
-    name = "email"
-    link = "example@example.com"  # no need for "mailto:" in the head
-
-[[projects]]
-name = "Hugo"
-url = "https://gohugo.io/"
-desc = "The world’s fastest framework for building websites."
-
-[[projects]]
-name = "Hugo Themes"
-url = "https://github.com/gohugoio/hugoThemes"
-desc = "A curated directory of Hugo themes"

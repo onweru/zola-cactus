@@ -1,13 +1,11 @@
----
-title: Standard ML notes
-date: 2019-12-30 09:00:00
-tags:
-    - SML
-categories:
-- notes
-keywords:
-    - SML
----
++++
+title = "Standard ML notes"
+date = 2019-12-30T09:00:00.000Z
+keywords = [ "SML" ]
+[taxonomies]
+tags = [ "SML" ]
+categories = [ "notes" ]
++++
 
 ## Basics
 
