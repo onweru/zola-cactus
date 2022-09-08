@@ -1,7 +1,7 @@
 // ref: https://github.com/primer/primer/blob/master/modules/primer-tooltips/lib/tooltips.scss
 .tooltipped {
   position: relative;
-}  
+}
 // This is the tooltip bubble
 .tooltipped::after {
   position: absolute;
@@ -9,7 +9,7 @@
   display: none;
   padding: .2em .5em;
   -webkit-font-smoothing: subpixel-antialiased;
-  color: $color-background;
+  color: var(--color-background);
   font-display: swap;
   font-weight: 400;
   font-size: $font-size * 0.8;
@@ -20,10 +20,10 @@
   word-wrap: break-word;
   white-space: pre;
   content: attr(aria-label);
-  background: $color-text;
+  background: var(--color-text);
   border-radius: 3px;
   opacity: 0;
-}  
+}
 // This is the tooltip arrow
 .tooltipped::before {
   position: absolute;
@@ -31,12 +31,12 @@
   display: none;
   width: 0;
   height: 0;
-  color: $color-text;
+  color: var(--color-text);
   pointer-events: none;
   content: '';
   border: 6px solid transparent;
   opacity: 0;
-}  
+}
 // delay animation for tooltip
 @keyframes tooltip-appear {
   from {
@@ -46,7 +46,7 @@
     opacity: 1;
   }
 };
-    
+
 // This will indicate when we'll activate the tooltip
 .tooltipped:hover,
 .tooltipped:active,
@@ -59,7 +59,7 @@
     animation-duration: 0.1s;
     animation-fill-mode: forwards;
     animation-timing-function: ease-in;
-  }    
+  }
 // Tooltipped south
 }
 .tooltipped-s,
@@ -74,12 +74,12 @@
     right: 50%;
     bottom: -7px;
     margin-right: -6px;
-    border-bottom-color: $color-text;
+    border-bottom-color: var(--color-text);
   }
 }
 .tooltipped-sw::after {
   margin-right: -16px;
-}  
+}
 // Move the tooltip body to the center of the object.
 .tooltipped-s::after {
   transform: translateX(50%);

@@ -9,7 +9,6 @@
         </span>
       </span>
       <div class="postdate">
-        {{ page.date | date(format=config.extra.date_format) }}
         <time datetime="{{ page.date }}" itemprop="datePublished">{{ page.date | date(format=config.extra.date_format) }}</time>
         {% if config.extra.show_updated %}
           (Updated: <time datetime="{{ page.modified }}" itemprop="dateModified">{{ page.modified }}</time>)
@@ -28,7 +27,7 @@
         <i class="fas fa-archive"></i>
         {% for cat in page.taxonomies.categories %}
           {% if loop.index > 1 %} ", " {% endif %}
-          <a class="category-link" href="{{ "/categories/" }}{{ cat }}">{{ cat }}</a>
+          <a class="category-link" href="{{ "/categories/" }}{{ cat | slugify }}">{{ cat }}</a>
         {% endfor %}
       </div>
       {% endif %}
@@ -37,7 +36,7 @@
         <i class="fas fa-tag"></i>
         {% for tag in page.taxonomies.tags %}
         {% if loop.index > 1 %} ", " {% endif %}
-        <a class="tag-link" href="{{ "/tags/" }}{{ tag }}" rel="tag">{{ tag }}</a>
+        <a class="tag-link" href="{{ "/tags/" }}{{ tag | slugify }}" rel="tag">{{ tag }}</a>
         {% endfor %}
       </div>
       {% endif %}

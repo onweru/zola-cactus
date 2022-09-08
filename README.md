@@ -1,10 +1,8 @@
 ## Cactus
 
-A hugo theme for personal blog. Fork from hexo theme [cactus](https://github.com/probberechts/hexo-theme-cactus) created by @probberechts.
+A Zola theme for personal blog. Fork from hexo theme [cactus](https://github.com/probberechts/hexo-theme-cactus) created by @probberechts.
 
-[Live demo on github pages](https://www.takuzen.me/hugo-theme-cactus/).
-
-Some works are still in progress. See [TODOS](#todos) below.
+[Live demo on github pages]().
 
 ## Install
 
@@ -23,7 +21,7 @@ theme = "cactus"
 3. config your site. See [Config] or a [complete config sample](exampleSite/config.toml)
 4. test your site
 ```
-hugo server
+zola serve
 ```
 
 5. publish your site in your prefered way. See hugo's doc: [Hosting & Deployment](https://gohugo.io/hosting-and-deployment/)
@@ -274,7 +272,8 @@ mathjax: true # or false
 
 The site config will be ignored when `mathjax` option exists in front matter.
 
-### Archive 
+### Archive
+
 Pagination on posts archive can be disabled to show all posts in chronological order
 
 ```toml
@@ -288,7 +287,7 @@ Pagination on posts archive can be disabled to show all posts in chronological o
 - [x] RSS
 - [ ] I18n
 - [x] Analytics
-- [ ] Local Search
+- [ ] Search
 - [ ] toc template
 - [ ] Customizable copyright year
 - [ ] gallery

@@ -1,4 +1,3 @@
 +++
-title = "posts"
-template = "index.html"
+title = "Articles"
 +++

@@ -1,10 +1,8 @@
-# {{ (add 0.8 (mul 15 (div (float $elem.Count) terms_count))) }}
 base_url = "https://example.com"
 languageCode = "en-us"
-title = "Cactus theme example"
+title = "Zola example"
 # theme = "cactus"
 disqusShortname = "example" # Used when comments is enabled. Cactus will use site title if not set
-# googleAnalytics = "UA-1234-5"
 compile_sass = true
 highlight_code = true
 build_search_index = false
@@ -34,6 +32,16 @@ postsOnHomePage = 6 # this option will be ignored if showAllPostsOnHomePage is s
 tagsOverview = true # show tags overview by default.
 ShowAllPostsOnHomePage = false
 toc = true
+rss = true # generate rss feed. default value is false
+# googleAnalytics = "UA-1234-5"
+googleAnalyticsAsync = true # use asynchronous tracking. Synchronous tracking by default
+# https://gohugo.io/functions/format/#hugo-date-and-time-templating-reference
+dateFormat = "2006-01-02" # default
+# Post page settings
+show_updated = false # default
+showReadTime = false # default
+# the value of name should be an valid font awesome icon name (brands type)
+# https://fontawesome.com/icons?d=gallery&s=brands
 
 # Main menu which appears below site header.
 [[extra.menu.main]]
@@ -42,19 +50,24 @@ url = "/"
 weight = 1
 
 [[extra.menu.main]]
-name = "Writings"
+name = "Posts"
 url = "/posts"
 weight = 2
 
 [[extra.menu.main]]
 name = "Tags"
 url = "/tags"
+weight = 4
+
+[[extra.menu.main]]
+name = "Categories"
+url = "/categories"
 weight = 3
 
 [[extra.menu.main]]
 name = "About"
 url = "/about"
-weight = 4
+weight = 5
 
 [[extra.projects]]
 name = "Hugo"
@@ -76,35 +89,20 @@ desc = "A curated directory of Hugo themes"
   name = "email"
   link = "example@example.com"  # no need for "mailto:" in the head
 
+[extra.comments]
+  enabled = true # default
+  engine = "cactus_comments" # only disqus, utterances, and cactus_comments is supported
+[extra.comments.utterances]
+  repo = "<github_username>/<github_reponame>"
+  label = "hugo-site-name" # you can use however you want to label your name in your repo's issues
+  theme = "github-light"
+[extra.comments.cactuscomments]
+  siteName = "your_cactus_comments_sitename" # see https://cactus.chat/ on how to register your site name
+  #serverUrl = "" # Defaults to https://matrix.cactus.chat:8448 (Cactus Chat public server)
+  #serverName = "" # Defaults to cactus.chat
+
 [markdown]
 # When set to "true", all code blocks are highlighted.
 highlight_code = true
 smart_punctuation = true
 highlight_theme = "dracula"
-
-[params]
-
-  rss = true # generate rss feed. default value is false
-  googleAnalyticsAsync = true # use asynchronous tracking. Synchronous tracking by default
-
-  # https://gohugo.io/functions/format/#hugo-date-and-time-templating-reference
-  dateFormat = "2006-01-02" # default
-
-  # Post page settings
-  show_updated = true # default
-  showReadTime = true # default
-
-  [params.comments]
-    enabled = true # default
-    engine = "cactus_comments" # only disqus, utterances, and cactus_comments is supported
-    [params.comments.utterances]
-      repo = "<github_username>/<github_reponame>"
-      label = "hugo-site-name" # you can use however you want to label your name in your repo's issues
-      theme = "github-light"
-    [params.comments.cactuscomments]
-      siteName = "your_cactus_comments_sitename" # see https://cactus.chat/ on how to register your site name
-      #serverUrl = "" # Defaults to https://matrix.cactus.chat:8448 (Cactus Chat public server)
-      #serverName = "" # Defaults to cactus.chat
-
-  # the value of name should be an valid font awesome icon name (brands type)
-  # https://fontawesome.com/icons?d=gallery&s=brands

@@ -9,8 +9,13 @@
   <div class="content index py4">
 
     {% include "partials/header.html" %}
-
-    {% include "partials/archive.html" %}
+    <ul>
+      {% for term in terms %}
+      <li>
+        <a href="{{ term.permalink }}">{{ term.name }} <span>({{ term.pages | length }})</span></a>
+      </li>
+      {% endfor %}
+    </ul>
 
     {% include "partials/footer.html" ignore missing %}
 

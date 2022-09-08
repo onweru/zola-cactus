@@ -16,12 +16,18 @@
   </a>
   <div id="nav">
     <ul>
-      <li class="icon">
+      <li class="icon nav_toggle">
         <a href="#" aria-label="Menu"><i class="fas fa-bars fa-2x" aria-hidden="true"></i></a>
       </li>
       {% for item in config.extra.menu.main %}
         <li><a href="{{ item.url }}">{{ item.name }}</a></li>
       {% endfor %}
+      <li>
+        <div class = 'color_mode'>
+          <label for = 'mode'></label>
+          <input type = 'checkbox' class = 'color_choice' id = 'mode' title="Toggle Dark Mode">
+        </div>
+      </li>
     </ul>
   </div>
 </header>

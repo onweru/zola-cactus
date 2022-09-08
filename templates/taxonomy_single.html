@@ -8,15 +8,8 @@
 <body class="max-width mx-auto px3 ltr">
   <div class="content index py4">
     {% include "partials/header.html" %}
-    <section id="about">
-      {% if config.description %}
-        {{ config.description  }}
-      {% endif %}
-      {% include "partials/social.html" %}
-      {% include "optional-about.html" ignore missing %}
-    </section>
-    <!-- tags -->
-    {% include "partials/projects.html" %}
+    <h1>{{ term.name }} <small>({{ taxonomy.name }})</small></h1>
+    {% include "partials/term.html" ignore missing %}
     {% include "partials/footer.html" ignore missing %}
   </div>
 </body>

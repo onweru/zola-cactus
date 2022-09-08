@@ -1,13 +1,60 @@
-// Fonts
 $font-family-body: "JetBrains Mono", monospace;
 $font-family-mono: "JetBrains Mono", monospace;
 $font-family-tt: "Inconsolata", monospace;
 $font-size: 14px;
 $line-height: 1.725;
 $page-width: 48rem;
-// Logo
 $logo-width: 50px;
 $logo-height: 50px;
 $logo-grayout: true;
 // Colors
-$colors: "dark" // white dark light classic
+$colors: "dark"; // white dark light classic
+
+@mixin darkmode {
+  --color-mode: "dark";
+  --color-background: #1d1f21;
+  --color-background-code: #222426;
+  --color-footer-mobile-2: #35393c;
+  --color-meta-code: #666;
+  --color-link: #d480aa;
+  --color-text: #c9cacc;
+  --color-accent-3: #cccccc;
+  --color-accent-2: #eeeeee;
+
+  --sunIcon: url('../icons/sun.svg');
+  --moonIcon: url('../icons/moon.svg');
+}
+
+html {
+  --color-background: #e2e0de;
+  --color-background-code: #dddbd9;
+  --color-accent: var(--color-background-code);
+  --color-footer-mobile-1: var(--color-background-code);
+  --color-footer-mobile-2: #cac7c3;
+  --color-border: #666;
+  --color-meta: var(--color-border);
+  --color-meta-code: gray;
+  --color-link: #2bbc89;
+  --color-text: #363533;
+  --color-accent-3: #666666;
+  --color-accent-2: #111111;
+  --color-accent-1: #2bbc8a;
+  --color-quote: #ccffb6;
+
+  &[data-mode="dark"] {
+    @include darkmode;
+    .color {
+      &_choice {
+        &::after {
+          background-image: var(--moonIcon);
+        }
+      }
+    }
+  }
+
+  &.dark:not([data-mode="light"]) {
+    @media (prefers-color-scheme: dark) {
+      @include darkmode;
+    }
+  }
+}
