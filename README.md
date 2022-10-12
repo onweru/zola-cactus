@@ -1,4 +1,4 @@
-## Cactus
+## Cactaceae
 
 A Zola theme for personal blog. Fork from hexo theme [cactus](https://github.com/probberechts/hexo-theme-cactus) created by @probberechts.
 
@@ -8,14 +8,14 @@ A Zola theme for personal blog. Fork from hexo theme [cactus](https://github.com
 
 1. clone cactus to your hugo site's `themes` folder.
 ```
-git clone https://github.com/monkeyWzr/hugo-theme-cactus.git themes/cactus
+git clone https://github.com/Nizzlay/Cactaceae themes/cactaceae
 ```
 
 2. change your theme to cactus in your site config
 ```toml
 # config.toml
 
-theme = "cactus"
+theme = "cactaceae"
 ```
 
 3. config your site. See [Config] or a [complete config sample](exampleSite/config.toml)
@@ -24,22 +24,15 @@ theme = "cactus"
 zola serve
 ```
 
-5. publish your site in your prefered way. See hugo's doc: [Hosting & Deployment](https://gohugo.io/hosting-and-deployment/)
+5. Publish your site
 
 ## Config
 
-### Color themes
-
-```toml
-[params]
-
-  colortheme = "white" # dark, light, white, or classic
-```
 
 ### Custom CSS
 
 ```toml
-[params]
+[extra]
   css = ["css/custom.css"]
 ```
 
@@ -49,62 +42,62 @@ For example, the above line will load the CSS-file placed at `/static/css/custom
 ### Navigation
 
 ```toml
-# Main menu which appears below site header.
-[[menu.main]]
+# Main menu which appears below site header
+
+[[extra.menu.main]]
 name = "Home"
 url = "/"
 weight = 1
 
-[[menu.main]]
-name = "All posts"
+[[extra.menu.main]]
+name = "Posts"
 url = "/posts"
 weight = 2
 
-[[menu.main]]
+[[extra.menu.main]]
 name = "Tags"
 url = "/tags"
-weight = 3
-
-[[menu.main]]
-name = "About"
-url = "/about"
 weight = 4
+
+[[extra.menu.main]]
+name = "Categories"
+url = "/categories"
+weight = 3
 ```
 
 ### Homepage settings
 
 * description: description will be displayed in the homepage. Markdown syntax is supported in the description string.
 ```toml
-[params]
 
-  description = "Hugo is a general-purpose website framework. Technically speaking, Hugo is a static site generator. Unlike systems that dynamically build a page with each visitor request, Hugo builds pages when you create or update your content. Since websites are viewed far more often than they are edited, Hugo is designed to provide an optimal viewing experience for your website’s end users and an ideal writing experience for website authors."
+description = "Hugo is a general-purpose website framework. Technically speaking, Hugo is a static site generator. Unlike systems that dynamically build a page with each visitor request, Hugo builds pages when you create or update your content. Since websites are viewed far more often than they are edited, Hugo is designed to provide an optimal viewing experience for your website’s end users and an ideal writing experience for website authors."
 ```
 
 * set your main section (used as the link for the "writings" title on the homepage)
 
 ```toml
-[params]
+[extra]
   mainSection = "posts"
 ```
 
 * change the default main section title from Writings, to something else:
 
 ```toml
-[params]
+[extra]
   mainSectionTitle = "Blog"
 ```
 
 * Show only the 5 most recent posts (default)
 
 ```toml
-[params]
+[extra]
   showAllPostsOnHomePage = false
   postsOnHomePage = 5
 ```
 * show all posts
 
 ```toml
-[params]
+[extra]
   showAllPostsOnHomePage = true
   postsOnHomePage = 5 # this option will be ignored
 ```
@@ -112,21 +105,21 @@ weight = 4
 * show tagsoverview (default) or not
 * 
 ```toml
-[params]
+[extra]
   tagsOverview = true
 ```
 
 * display the table of contents inline on blog posts, rather than as part of the navigation menu:
 
 ```toml
-[params]
+[extra]
   tocInline = true
 ```
 
 * show projects list (default) or not.
 
 ```toml
-[params]
+[extra]
   showProjectsList = true
   projectsUrl = "https://github.com/monkeyWzr"
 ```
@@ -159,15 +152,15 @@ for example, `data/projects.json`:
 ### Social media links
 
 ```toml
-[[params.social]]
+[[extra.social]]
   name = "github"
   link = "https://github.com/monkeyWzr"
 
-[[params.social]]
+[[extra.social]]
   name = "email"
   link = "monkeywzr@gmail.com" # no need for "mailto:" at the start
 
-[[params.social]]
+[[extra.social]]
   name = "linkedin"
   link = "https://www.linkedin.com/in/monkeywzr/"
 ```
@@ -176,11 +169,12 @@ The `name` key expects the name of a [Font Awesome icon](https://fontawesome.com
 
 ### Copyright
 
-Assign your copy right to `.Site.Copyright`. Cactus will append current year to the head.
+Assign your copy right under `extra.copyright`. Cactus will append current year to the head.
 
 TODO: Customizable copyright year
 
 ```toml
+[extra]
 copyright = "Zeran Wu" # cactus theme will use site title if copyright is not set
 ```
 
@@ -188,8 +182,8 @@ copyright = "Zeran Wu" # cactus theme will use site title if copyright is not se
 
 Comments is disabled by default. Enable comments in your `.Site.Params`.
 ```toml
-[params]
-  [params.comments]
+[extra]
+  [extra.comments]
     enabled = true
     # engine = "disqus" # in progress
 ```
@@ -211,22 +205,16 @@ disqusShortname = "wzr" # cactus will use site title if not set
 
 ### highlight
 
-Use hugo's built-in [syntax highlighting](https://gohugo.io/getting-started/configuration-markup#highlight).
+Use hugo's built-in [syntax highlighting](https://www.getzola.org/documentation/getting-started/configuration/).
 
 default config:
 
 ```toml
-[markup]
-  [markup.highlight]
-    codeFences = true
-    guessSyntax = false
-    hl_Lines = ""
-    lineNoStart = 1
-    lineNos = false
-    lineNumbersInTable = true
-    noClasses = true
-    style = "monokai"
-    tabWidth = 4
+[markdown]
+  # When set to "true", all code blocks are highlighted.
+  highlight_code = true
+  smart_punctuation = true
+  highlight_theme = "dracula"
 ```
 
 ### Analytics
@@ -240,7 +228,7 @@ googleAnalytics = "UA-XXXXXXXX-XX" # or G-XXXXXXXX if you are using Google Analy
 
 If you are using Google Analytics v3 (analytics.js), you can switch to asynchronous tracking by set `params.googleAnalyticsAsync` to `true`.
 ```toml
-[params]
+[extra]
 googleAnalyticsAsync = true # not required
 ```
 
@@ -249,7 +237,7 @@ googleAnalyticsAsync = true # not required
 The rss feed is not generated by default. you can enable it in your site config:
 
 ```toml
-[params]
+[extra]
   rss = true
 ```
 
@@ -261,7 +249,7 @@ Please also check [Configure RSS](https://gohugo.io/templates/rss/#configure-rss
 
 Cactus supports mathjax. Just add `mathjax` option in your site config:
 ```toml
-[params]
+[extra]
   mathjax = true  # not required
 ```
 
@@ -277,7 +265,7 @@ The site config will be ignored when `mathjax` option exists in front matter.
 Pagination on posts archive can be disabled to show all posts in chronological order
 
 ```toml
-[params]
+[extra]
   showAllPostsArchive = true # or false (default)
 ```
 
@@ -292,6 +280,7 @@ Pagination on posts archive can be disabled to show all posts in chronological o
 - [ ] Customizable copyright year
 - [ ] gallery
 - [ ] expose [mathjax configuration](https://docs.mathjax.org/en/latest/web/configuration.html#web-configuration) 
+- [ ] Update readme
 
 ## License
 
